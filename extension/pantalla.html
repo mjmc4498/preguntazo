@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preguntazo · Pantalla</title>
+  <link rel="icon" href="icons/icon-32.png">
+  <link rel="stylesheet" href="pantalla.css">
+  <script src="lib/stage.js"></script>
+  <script src="pantalla.js" type="module"></script>
+</head>
+<body>
+  <div class="stage-host" id="stage"></div>
+
+  <div class="controls" id="controls">
+    <button type="button" id="big-qr" data-i18n-title="bigQrTitle">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v1M14 20h1M17 20h4v-3"/></svg>
+      <span data-i18n="screenQr"></span>
+    </button>
+    <button type="button" id="next-q" data-i18n-title="nextQuestionTitle">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="m10 8 3 2-3 2"/></svg>
+      <span data-i18n="nextQuestion"></span>
+    </button>
+    <button type="button" id="clear" data-i18n-title="clearScreenTitle">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="m9 8 6 6M15 8l-6 6"/></svg>
+      <span data-i18n="clearScreen"></span>
+    </button>
+    <span class="sep"></span>
+    <button type="button" id="fullscreen" data-i18n-title="fullscreenTitle">
+      <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+      <span data-i18n="fullscreen"></span>
+    </button>
+  </div>
+  <p class="hint" id="hint" data-i18n="screenHint"></p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "preguntazo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Preguntazo: preguntas, encuestas y reacciones en vivo para charlas y talleres.",
+  "author": "Miguel Mogrovejo",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 8768",
+    "build": "./scripts/build.sh",
+    "build:crx": "./scripts/build.sh --crx",
+    "textos": "python3 scripts/textos.py",
+    "icons": "python3 scripts/render.py icons",
+    "test:e2e": "node test/e2e.mjs",
+    "test:carga": "node test/carga.mjs",
+    "store:capture": "node scripts/capture-store.mjs",
+    "store:images": "python3 scripts/render.py store",
+    "presentacion": "python3 scripts/presentacion.py"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.14.0"
+  }
+}

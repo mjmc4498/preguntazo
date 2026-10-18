@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Preguntazo">
+  <meta name="description" content="Preguntazo: envía preguntas, vota en encuestas y reacciona en vivo en la charla.">
+  <meta name="author" content="Miguel Mogrovejo">
+  <meta name="referrer" content="no-referrer">
+  <title>Preguntazo</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="app.css?v=1.0.0">
+</head>
+<body>
+  <div class="app" id="app" data-conn="connecting">
+    <header class="top">
+      <div class="room">
+        <img src="icon.svg" width="34" height="34" alt="">
+        <div class="room-text">
+          <b id="talk-title">Preguntazo</b>
+          <span class="status"><i class="dot"></i><span id="status-text"></span><span id="count-sep" hidden> · </span><span id="count"></span></span>
+        </div>
+      </div>
+      <button class="icon-btn" id="open-settings" type="button" data-t-aria="settings">
+        <svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+      </button>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button type="button" role="tab" id="tab-q" data-view="q" aria-selected="true">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span data-t="tabQuestions"></span>
+      </button>
+      <button type="button" role="tab" id="tab-poll" data-view="poll" aria-selected="false">
+        <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <span data-t="tabPoll"></span><i class="badge" id="poll-badge" hidden></i>
+      </button>
+    </nav>
+
+    <main class="views" id="views">
+      <!-- Preguntas -->
+      <section class="view" id="view-q">
+        <form class="composer" id="composer" autocomplete="off">
+          <textarea id="q-text" maxlength="280" rows="2" enterkeyhint="send" data-t-ph="askPlaceholder"></textarea>
+          <div class="composer-row">
+            <label class="anon" id="anon-wrap" hidden>
+              <input type="checkbox" class="switch small" id="anon">
+              <span data-t="askAnon"></span>
+            </label>
+            <span class="as" id="as-line"></span>
+            <span class="counter" id="counter"></span>
+            <button class="send" id="send" type="submit">
+              <span data-t="send"></span>
+              <svg viewBox="0 0 24 24"><path d="m5 12 14-7-5 15-3-6z"/></svg>
+            </button>
+          </div>
+        </form>
+        <p class="note" id="q-closed" hidden data-t="questionsClosed"></p>
+
+        <div class="block" id="mine" hidden>
+          <div class="label" data-t="yourQuestions"></div>
+          <ul class="qlist mine-list" id="mine-list"></ul>
+        </div>
+
+        <div class="block" id="public">
+          <div class="list-head">
+            <span class="label" data-t="audienceQuestions"></span>
+            <div class="seg small" id="sort" role="radiogroup">
+              <button type="button" role="radio" data-v="top" aria-checked="true" data-t="sortTop"></button>
+              <button type="button" role="radio" data-v="new" aria-checked="false" data-t="sortNew"></button>
+            </div>
+          </div>
+          <ul class="qlist" id="qlist"></ul>
+          <div class="empty" id="q-empty">
+            <div class="empty-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9.5 8.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.2M12 15.2v.1"/></svg></div>
+            <b data-t="noQuestionsTitle"></b>
+            <span data-t="noQuestionsBody"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Encuesta -->
+      <section class="view" id="view-poll" hidden>
+        <div class="poll" id="poll" hidden>
+          <div class="poll-head">
+            <span class="chip" id="poll-chip"><i></i><span id="poll-state"></span></span>
+            <span class="muted small" id="poll-total"></span>
+          </div>
+          <h2 id="poll-q"></h2>
+          <p class="muted small" id="poll-hint"></p>
+          <div class="poll-body" id="poll-body"></div>
+          <div class="poll-foot" id="poll-foot"></div>
+        </div>
+        <div class="empty" id="poll-empty">
+          <div class="empty-ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <b data-t="noPollTitle"></b>
+          <span data-t="noPollBody"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="react-bar" id="react-bar" hidden>
+      <div class="react-inner" id="reactions" role="group" data-t-aria="reactions"></div>
+    </footer>
+    <div class="fx" id="fx" aria-hidden="true"></div>
+
+    <!-- Entrar con un código -->
+    <div class="screen enter" id="enter" hidden>
+      <div class="screen-inner">
+        <img src="icon.svg" class="screen-logo" width="80" height="80" alt="">
+        <h1 data-t="enterTitle"></h1>
+        <p data-t="enterBody"></p>
+        <form id="enter-form" class="code-form" autocomplete="off">
+          <input id="code-input" class="code-input" inputmode="text" autocapitalize="characters" spellcheck="false" maxlength="7" placeholder="K7Q-M4P" aria-label="Código">
+          <button class="btn primary big" type="submit" data-t="enterBtn"></button>
+        </form>
+        <p class="screen-err" id="enter-err" hidden></p>
+      </div>
+      <p class="credit">Preguntazo · Miguel Mogrovejo</p>
+    </div>
+
+    <!-- Bienvenida a la sala -->
+    <div class="screen join" id="join" hidden>
+      <div class="screen-inner">
+        <img src="icon.svg" class="screen-logo" width="80" height="80" alt="">
+        <span class="kicker" data-t="joinKicker"></span>
+        <h1 id="join-title"></h1>
+        <p id="join-body" data-t="joinBody"></p>
+        <form id="join-form" class="join-form" autocomplete="off">
+          <input id="name-input" class="input big" maxlength="32" enterkeyhint="go" autocomplete="given-name">
+          <button class="btn primary big" type="submit" data-t="joinBtn"></button>
+        </form>
+        <p class="fine" data-t="joinFine"></p>
+      </div>
+    </div>
+
+    <!-- Conexión -->
+    <div class="screen gate" id="gate">
+      <div class="screen-inner">
+        <img src="icon.svg" class="screen-logo" width="84" height="84" alt="">
+        <h1 id="gate-title"></h1>
+        <p id="gate-body"></p>
+        <div class="spinner" id="gate-spinner"></div>
+        <button class="btn" type="button" id="gate-retry" data-t="retry" hidden></button>
+        <button class="btn ghost" type="button" id="gate-other" data-t="otherRoom" hidden></button>
+      </div>
+      <p class="credit">Preguntazo · Miguel Mogrovejo</p>
+    </div>
+
+    <!-- Ajustes -->
+    <dialog class="sheet" id="settings">
+      <form method="dialog">
+        <div class="sheet-handle"></div>
+        <h2 data-t="settings"></h2>
+        <label class="field">
+          <span class="field-label" data-t="yourName"></span>
+          <input class="input" id="name-edit" maxlength="32" autocomplete="given-name">
+        </label>
+        <label class="field field-row">
+          <span data-t="haptics"></span>
+          <input type="checkbox" class="switch" id="haptics">
+        </label>
+        <div class="field field-row muted">
+          <span data-t="roomCode"></span>
+          <span id="room-code">—</span>
+        </div>
+        <div class="field field-row muted">
+          <span data-t="latency"></span>
+          <span id="latency">—</span>
+        </div>
+        <button type="button" class="btn danger" id="leave" data-t="leave"></button>
+        <button type="submit" class="btn primary" value="close" data-t="done"></button>
+        <p class="credit-in">Preguntazo <span id="version"></span> · <span data-t="madeBy"></span> · <a href="privacy.html" target="_blank" rel="noopener" data-t="privacy"></a></p>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <script src="peerjs.min.js"></script>
+  <script src="app.js?v=1.0.0"></script>
+</body>
+</html>

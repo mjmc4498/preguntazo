@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preguntazo</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" type="module"></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <img src="icons/icon-32.png" width="22" height="22" alt="">
+      <span>Preguntazo</span>
+    </div>
+    <span class="pill" id="status" data-tone="muted"><i></i><span id="status-text" data-i18n="statusStarting"></span></span>
+  </header>
+
+  <main>
+    <section class="scan" id="scan">
+      <div class="qr-card" id="qr-card">
+        <div class="qr" id="qr" role="img" data-i18n-aria="qrAlt"></div>
+        <div class="qr-loading" id="qr-loading"><span class="spinner"></span></div>
+      </div>
+      <div class="code-line">
+        <span class="code" id="code">······</span>
+        <span class="muted short" id="short"></span>
+      </div>
+    </section>
+
+    <section class="stopped" id="stopped" hidden>
+      <div class="stopped-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></svg>
+      </div>
+      <h1 data-i18n="stoppedTitle"></h1>
+      <p class="muted" data-i18n="stoppedBody"></p>
+      <button class="btn primary" id="start" data-i18n="start"></button>
+    </section>
+
+    <p class="alert" id="alert" hidden></p>
+
+    <div class="live" id="live">
+      <div class="stats">
+        <div class="stat"><b id="n-people">0</b><span data-i18n="statPeople"></span></div>
+        <div class="stat"><b id="n-questions">0</b><span id="l-questions" data-i18n="statQuestions"></span></div>
+        <div class="stat"><b id="n-reactions">0</b><span data-i18n="statReactions"></span></div>
+      </div>
+
+      <div class="poll-mini" id="poll-mini" hidden>
+        <span class="dot"></span>
+        <span class="poll-text"><b id="poll-q"></b><span class="muted" id="poll-n"></span></span>
+        <button class="btn small" id="poll-close" type="button" data-i18n="pollClose"></button>
+      </div>
+
+      <section class="card site" id="site-card">
+        <label class="site-row">
+          <img id="site-icon" width="16" height="16" alt="" hidden>
+          <span class="site-fallback" id="site-fallback"></span>
+          <span class="site-text">
+            <span class="site-title" data-i18n="showHere"></span>
+            <span class="site-sub muted" id="site-sub"></span>
+          </span>
+          <input type="checkbox" class="switch" id="pin">
+        </label>
+        <button class="btn small ghost site-always" id="site-always" type="button" hidden></button>
+      </section>
+
+      <div class="quick">
+        <button class="tool" id="big-qr" type="button" aria-pressed="false" data-i18n-title="bigQrTitle">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v1M14 20h1M17 20h4v-3"/></svg>
+          <span data-i18n="bigQr"></span>
+        </button>
+        <button class="tool" id="next-q" type="button" data-i18n-title="nextQuestionTitle">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="m10 8 3 2-3 2"/></svg>
+          <span data-i18n="nextQuestion"></span>
+        </button>
+        <button class="tool" id="clear" type="button" data-i18n-title="clearScreenTitle">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="m9 8 6 6M15 8l-6 6"/></svg>
+          <span data-i18n="clearScreen"></span>
+        </button>
+      </div>
+
+      <button class="btn primary wide" id="open-panel" type="button">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M13 9h5M13 13h5"/></svg>
+        <span data-i18n="openPanel"></span>
+      </button>
+      <button class="btn wide" id="open-screen" type="button">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+        <span data-i18n="openScreen"></span>
+      </button>
+    </div>
+  </main>
+
+  <footer class="actions">
+    <button class="btn ghost" id="copy" data-i18n-title="copyLinkTitle">
+      <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+      <span data-i18n="copyLink"></span>
+    </button>
+    <button class="btn ghost" id="download-qr" data-i18n-title="downloadQrTitle">
+      <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+      <span data-i18n="downloadQr"></span>
+    </button>
+    <span class="spacer"></span>
+    <button class="btn icon" id="stop" data-i18n-title="stop" data-i18n-aria="stop">
+      <svg viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></svg>
+    </button>
+    <button class="btn icon" id="options" data-i18n-title="settings" data-i18n-aria="settings">
+      <svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+    </button>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

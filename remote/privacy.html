@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Preguntazo · Política de privacidad</title>
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <style>
+    :root { --bg: #fff; --text: #0b0b0c; --muted: #6e6e73; --line: rgba(0,0,0,.08); --surface: #f5f5f7; color-scheme: light; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0b0b0c; --text: #f5f5f7; --muted: #8e8e93; --line: rgba(255,255,255,.08); --surface: #161618; color-scheme: dark; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    main { max-width: 720px; margin: 0 auto; padding: 56px 20px 80px; }
+    header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+    header img { width: 56px; height: 56px; }
+    h1 { margin: 0; font-size: 30px; letter-spacing: -.03em; line-height: 1.15; }
+    h2 { margin: 40px 0 8px; font-size: 19px; letter-spacing: -.015em; }
+    p, li { color: var(--text); }
+    .muted { color: var(--muted); }
+    .card { padding: 18px 20px; margin-top: 20px; border-radius: 14px; background: var(--surface); }
+    ul { padding-left: 20px; }
+    li + li { margin-top: 6px; }
+    code { font-size: .92em; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.svg" alt="">
+    <div>
+      <h1>Política de privacidad</h1>
+      <div class="muted">Preguntazo · Preguntas, encuestas y reacciones en vivo</div>
+    </div>
+  </header>
+  <section>
+    <p class="muted" style="margin-top:20px">Última actualización: 17 de octubre de 2026 (versión 1.0) · Autor: Miguel Mogrovejo</p>
+
+    <div class="card">
+      <strong>En resumen:</strong> Preguntazo no tiene servidores propios ni base de datos, y no recopila, vende ni comparte datos personales. No usa cuentas, analítica, publicidad ni cookies. Las preguntas, los votos y las reacciones viajan de forma directa y cifrada desde el celular de cada persona del público hasta la computadora del presentador, y nunca llegan al autor.
+    </div>
+
+    <h2>Qué hace Preguntazo</h2>
+    <p>Preguntazo es una extensión de Chrome para charlas, clases y talleres. Muestra un código QR sobre las diapositivas del presentador; el público lo escanea, abre esta página web en su celular y desde ahí envía preguntas, vota las preguntas de los demás, responde encuestas y envía reacciones con emojis que aparecen sobre las diapositivas.</p>
+
+    <h2>Si eres parte del público</h2>
+    <ul>
+      <li><strong>Tu nombre es opcional</strong> (salvo que el presentador desactive las preguntas anónimas). Si lo escribes, el presentador lo ve, y aparece junto a tus preguntas para el resto de la sala si así lo elige el presentador. Puedes enviar cada pregunta de forma anónima.</li>
+      <li><strong>Lo que envías</strong> —tus preguntas, tus votos, tus respuestas a las encuestas y tus reacciones— llega a la computadora del presentador. Si el presentador lo permite, las demás personas conectadas ven las preguntas publicadas y su número de votos, y los resultados de las encuestas, pero nunca quién votó qué.</li>
+      <li><strong>Identificador aleatorio:</strong> tu celular genera un identificador al azar (no contiene datos tuyos) para recordar tus votos y tus preguntas si te reconectas. Se guarda en el almacenamiento local de tu navegador junto con tu nombre, el código de la última sala y tus preferencias. Puedes borrarlos con «Salir de esta sala» o borrando los datos del sitio.</li>
+      <li>Esta página no pide permiso de cámara, micrófono, ubicación ni contactos.</li>
+    </ul>
+
+    <h2>Si eres el presentador</h2>
+    <ul>
+      <li>Las preguntas, los votos, las encuestas y los totales de reacciones se guardan solo en tu Chrome (<code>chrome.storage.local</code>), para que no se pierdan si cierras el navegador a mitad de la charla. Puedes borrarlos con «Vaciar la sala» en el panel, y exportarlos tú mismo en CSV.</li>
+      <li>Los ajustes (nombre de la charla, esquina y tamaño del QR, moderación, emojis) se guardan con <code>chrome.storage.sync</code> y pueden sincronizarse con tu cuenta de Chrome si tienes la sincronización activada.</li>
+      <li>Puedes desconectar a cualquier persona y crear un código nuevo en cualquier momento.</li>
+    </ul>
+
+    <h2>Cómo se establece la conexión</h2>
+    <ul>
+      <li>Todo viaja por conexiones <strong>WebRTC</strong> de punto a punto, cifradas (DTLS), entre cada celular y la computadora del presentador.</li>
+      <li>Para encontrarse, los dispositivos usan el servidor público de señalización de <a href="https://peerjs.com" rel="noopener">PeerJS</a>. Solo recibe el identificador de la sala y los datos técnicos de red necesarios para conectar (por ejemplo, direcciones IP). No recibe las preguntas, los votos ni los nombres.</li>
+      <li>Si una red impide la conexión directa (por ejemplo, el Wi-Fi de un auditorio), el tráfico cifrado pasa por el servidor de retransmisión (TURN) de <a href="https://www.cloudflare.com/es-es/privacypolicy/" rel="noopener">Cloudflare</a>, que no puede leerlo. Para usarlo, la extensión y el celular piden credenciales temporales a un pequeño servicio del autor alojado en Cloudflare, que no guarda ningún dato.</li>
+      <li>El código de la sala va en la parte de la dirección que nunca se envía a los servidores web (después del signo <code>#</code>).</li>
+    </ul>
+
+    <h2>Sobre las diapositivas</h2>
+    <p>La extensión dibuja una capa transparente sobre la pestaña donde presentas: el QR, las reacciones y la pregunta o la encuesta que eliges destacar. Esa capa no recibe clics y Preguntazo no lee, guarda ni envía el contenido de las páginas. Se muestra solo en la pestaña que activas («Mostrar en esta pestaña») o, si lo permites, en los sitios que elijas al presentar en pantalla completa.</p>
+
+    <h2>Permisos de la extensión</h2>
+    <ul>
+      <li><strong>Pestaña activa (<code>activeTab</code>):</strong> mostrar la capa en la pestaña de la presentación cuando lo pides desde el panel o con un atajo de teclado, sin pedir acceso a todos los sitios.</li>
+      <li><strong>Ejecución de scripts (<code>scripting</code>):</strong> insertar la capa en esa pestaña y, en los sitios que permitas, registrarla para que aparezca sola al presentar en pantalla completa.</li>
+      <li><strong>Documento en segundo plano (<code>offscreen</code>):</strong> mantener la conexión WebRTC con los celulares del público.</li>
+      <li><strong>Almacenamiento (<code>storage</code>):</strong> guardar tus ajustes, el código de la sala, las preguntas y las encuestas.</li>
+      <li><strong>Acceso a sitios web (opcional):</strong> solo en los sitios que elijas, para mostrar la capa sola al presentar en pantalla completa. Se quita en los ajustes de Preguntazo o en <code>chrome://extensions</code>.</li>
+    </ul>
+
+    <h2>Menores de edad</h2>
+    <p>Preguntazo puede usarse en clases. No pide datos personales y el nombre es opcional; recomendamos a los docentes mantener activada la opción «Revisar antes de publicar» con grupos de menores.</p>
+
+    <h2>Cambios y contacto</h2>
+    <p>Si esta política cambia, se actualizará en esta misma página. Para dudas o sugerencias, escribe al autor, Miguel Mogrovejo, a través de <a href="https://github.com/mjmc4498" rel="noopener">github.com/mjmc4498</a>.</p>
+  </section>
+
+</main>
+</body>
+</html>

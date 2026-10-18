@@ -1,0 +1,906 @@
+{
+  "extName": {
+    "message": "Preguntazo: preguntas, encuestas y reacciones en vivo"
+  },
+  "extDescription": {
+    "message": "Tu público escanea un QR y envía preguntas, vota en encuestas y lanza emojis que flotan sobre tus diapositivas en tiempo real."
+  },
+  "actionTitle": {
+    "message": "Preguntazo — preguntas, encuestas y reacciones de tu público"
+  },
+  "cmdOpen": {
+    "message": "Abrir Preguntazo (QR de la sala)"
+  },
+  "cmdQr": {
+    "message": "Mostrar u ocultar el QR grande sobre la diapositiva"
+  },
+  "cmdNext": {
+    "message": "Mostrar la pregunta más votada (y marcar la anterior como respondida)"
+  },
+  "cmdClear": {
+    "message": "Quitar de la pantalla la pregunta, la encuesta o el QR grande"
+  },
+  "statusStarting": {
+    "message": "Abriendo la sala…"
+  },
+  "statusStopped": {
+    "message": "Sala cerrada"
+  },
+  "statusReady": {
+    "message": "Sala abierta"
+  },
+  "statusConnecting": {
+    "message": "Conectando…"
+  },
+  "statusOffline": {
+    "message": "Sin conexión"
+  },
+  "statusOne": {
+    "message": "1 persona conectada"
+  },
+  "statusMany": {
+    "message": "$COUNT$ personas conectadas",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNetwork": {
+    "message": "No se pudo conectar con el servidor. Revisa tu conexión a internet; Preguntazo seguirá reintentando."
+  },
+  "errorGeneric": {
+    "message": "No se pudo abrir la sala. Cierra este panel y vuelve a abrirlo."
+  },
+  "qrAlt": {
+    "message": "Código QR para que tu público participe"
+  },
+  "stoppedTitle": {
+    "message": "Sala cerrada"
+  },
+  "stoppedBody": {
+    "message": "Abre la sala para mostrar el código y que tu público pregunte, vote y reaccione."
+  },
+  "start": {
+    "message": "Abrir la sala"
+  },
+  "stop": {
+    "message": "Cerrar la sala"
+  },
+  "settings": {
+    "message": "Ajustes"
+  },
+  "statPeople": {
+    "message": "Personas"
+  },
+  "statQuestions": {
+    "message": "Sin responder"
+  },
+  "statPending": {
+    "message": "Por revisar"
+  },
+  "statReactions": {
+    "message": "Reacciones"
+  },
+  "pollLive": {
+    "message": "En vivo"
+  },
+  "pollClosed": {
+    "message": "Cerrada"
+  },
+  "pollClose": {
+    "message": "Cerrar votación"
+  },
+  "pollHide": {
+    "message": "Quitar de los celulares"
+  },
+  "oneVote": {
+    "message": "1 voto"
+  },
+  "manyVotes": {
+    "message": "$N$ votos",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "showHere": {
+    "message": "Mostrar en esta pestaña"
+  },
+  "siteShowing": {
+    "message": "El QR y las reacciones se ven sobre esta pestaña"
+  },
+  "siteAuto": {
+    "message": "Aparece sola al presentar en pantalla completa"
+  },
+  "siteOff": {
+    "message": "Muestra el QR y las reacciones sobre tus diapositivas"
+  },
+  "siteRestricted": {
+    "message": "Chrome no permite extensiones en esta página"
+  },
+  "siteAlways": {
+    "message": "Mostrar sola al presentar en $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAlwaysDone": {
+    "message": "Listo: aparecerá sola al presentar en pantalla completa"
+  },
+  "bigQr": {
+    "message": "QR grande"
+  },
+  "bigQrTitle": {
+    "message": "Mostrar el QR en grande sobre la diapositiva para invitar a participar"
+  },
+  "nextQuestion": {
+    "message": "Siguiente pregunta"
+  },
+  "nextQuestionTitle": {
+    "message": "Mostrar la pregunta más votada y marcar la anterior como respondida"
+  },
+  "clearScreen": {
+    "message": "Limpiar pantalla"
+  },
+  "clearScreenTitle": {
+    "message": "Quitar de la pantalla la pregunta, la encuesta o el QR grande"
+  },
+  "nextShown": {
+    "message": "Pregunta en pantalla"
+  },
+  "noMoreQuestions": {
+    "message": "No hay preguntas sin responder"
+  },
+  "screenCleared": {
+    "message": "Pantalla despejada"
+  },
+  "openPanel": {
+    "message": "Abrir el panel del presentador"
+  },
+  "openScreen": {
+    "message": "Abrir la pantalla completa"
+  },
+  "copyLink": {
+    "message": "Copiar enlace"
+  },
+  "copyLinkTitle": {
+    "message": "Copiar el enlace de la sala"
+  },
+  "linkCopied": {
+    "message": "Enlace copiado"
+  },
+  "downloadQr": {
+    "message": "QR"
+  },
+  "downloadQrTitle": {
+    "message": "Descargar el QR en PNG para pegarlo en tus diapositivas"
+  },
+  "downloadQrLong": {
+    "message": "Descargar QR para tus diapositivas"
+  },
+  "qrDownloaded": {
+    "message": "QR descargado (PNG)"
+  },
+  "talkTitle": {
+    "message": "Nombre de la charla"
+  },
+  "talkTitleSub": {
+    "message": "Lo ve tu público al entrar y aparece sobre el QR grande."
+  },
+  "talkTitlePlaceholder": {
+    "message": "Nombre de tu charla o taller (opcional)"
+  },
+  "codeTitle": {
+    "message": "Código de la sala: tu público también puede escribirlo"
+  },
+  "tabQuestions": {
+    "message": "Preguntas"
+  },
+  "tabPolls": {
+    "message": "Encuestas"
+  },
+  "tabReactions": {
+    "message": "Reacciones"
+  },
+  "tabAudience": {
+    "message": "Público"
+  },
+  "filterAll": {
+    "message": "Todas"
+  },
+  "filterPending": {
+    "message": "Por revisar"
+  },
+  "filterOpen": {
+    "message": "Sin responder"
+  },
+  "filterAnswered": {
+    "message": "Respondidas"
+  },
+  "filterHidden": {
+    "message": "Ocultas"
+  },
+  "sortTop": {
+    "message": "Más votadas"
+  },
+  "sortNew": {
+    "message": "Recientes"
+  },
+  "search": {
+    "message": "Buscar preguntas"
+  },
+  "searchPlaceholder": {
+    "message": "Buscar…"
+  },
+  "swQuestionsOpen": {
+    "message": "Recibir preguntas"
+  },
+  "swQuestionsOpenSub": {
+    "message": "Si lo apagas, el público ya no puede enviar preguntas nuevas (sí votar las que hay)."
+  },
+  "swModeration": {
+    "message": "Revisar antes de publicar"
+  },
+  "swModerationSub": {
+    "message": "Las preguntas nuevas esperan tu aprobación antes de que el público las vea."
+  },
+  "swAnonymous": {
+    "message": "Permitir preguntas anónimas"
+  },
+  "swAnonymousSub": {
+    "message": "Cada persona elige si pregunta con su nombre o sin él."
+  },
+  "swPublic": {
+    "message": "El público ve y vota las preguntas"
+  },
+  "swPublicSub": {
+    "message": "Todos ven las preguntas de los demás y votan las que quieren que respondas."
+  },
+  "swResults": {
+    "message": "Resultados en vivo en los celulares"
+  },
+  "swResultsSub": {
+    "message": "Quien vota ve cómo van las encuestas. Si lo apagas, los ve al cerrar la votación."
+  },
+  "swReactions": {
+    "message": "Reacciones con emojis"
+  },
+  "swReactionsSub": {
+    "message": "El público toca un emoji y sube flotando sobre tus diapositivas."
+  },
+  "exportCsv": {
+    "message": "Exportar CSV"
+  },
+  "anonymous": {
+    "message": "Anónimo"
+  },
+  "voteOne": {
+    "message": "voto"
+  },
+  "voteMany": {
+    "message": "votos"
+  },
+  "tagPending": {
+    "message": "Por revisar"
+  },
+  "tagOnScreen": {
+    "message": "En pantalla"
+  },
+  "tagPinned": {
+    "message": "Fijada"
+  },
+  "tagAnswered": {
+    "message": "Respondida"
+  },
+  "tagHidden": {
+    "message": "Oculta"
+  },
+  "tagOnPhones": {
+    "message": "En los celulares"
+  },
+  "approve": {
+    "message": "Aprobar"
+  },
+  "showOnScreen": {
+    "message": "Mostrar en pantalla"
+  },
+  "onScreenNow": {
+    "message": "En pantalla"
+  },
+  "markAnswered": {
+    "message": "Marcar como respondida"
+  },
+  "markOpen": {
+    "message": "Marcar como sin responder"
+  },
+  "pin": {
+    "message": "Fijar arriba"
+  },
+  "unpin": {
+    "message": "Dejar de fijar"
+  },
+  "hide": {
+    "message": "Ocultar al público"
+  },
+  "unhide": {
+    "message": "Volver a mostrar"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "confirmAgain": {
+    "message": "Pulsa otra vez para confirmar"
+  },
+  "confirmDelete": {
+    "message": "Pulsa otra vez para eliminar"
+  },
+  "confirmReset": {
+    "message": "Pulsa otra vez para borrar los votos"
+  },
+  "confirmKick": {
+    "message": "Pulsa otra vez para desconectar a esta persona"
+  },
+  "confirmNewCode": {
+    "message": "Pulsa otra vez: el código actual dejará de funcionar"
+  },
+  "confirmClearRoom": {
+    "message": "Pulsa otra vez para borrar preguntas, votos y reacciones"
+  },
+  "justNow": {
+    "message": "ahora"
+  },
+  "qEmptyTitle": {
+    "message": "Aún no hay preguntas"
+  },
+  "qEmptyBody": {
+    "message": "Muestra el QR para que tu público escanee y pregunte. Las preguntas aparecerán aquí al instante."
+  },
+  "qClosedBody": {
+    "message": "La recepción de preguntas está apagada. Actívala con «Recibir preguntas»."
+  },
+  "qNoMatchTitle": {
+    "message": "Nada por aquí"
+  },
+  "qNoMatchBody": {
+    "message": "Ninguna pregunta coincide con el filtro o la búsqueda."
+  },
+  "nothingToExport": {
+    "message": "Todavía no hay nada que exportar"
+  },
+  "cmdFailed": {
+    "message": "No se pudo completar. ¿Está abierta la sala?"
+  },
+  "yes": {
+    "message": "Sí"
+  },
+  "no": {
+    "message": "No"
+  },
+  "csvQuestion": {
+    "message": "Pregunta"
+  },
+  "csvAuthor": {
+    "message": "Autor"
+  },
+  "csvVotes": {
+    "message": "Votos"
+  },
+  "csvStatus": {
+    "message": "Estado"
+  },
+  "csvAnswered": {
+    "message": "Respondida"
+  },
+  "csvDate": {
+    "message": "Fecha"
+  },
+  "csvLive": {
+    "message": "Publicada"
+  },
+  "csvPoll": {
+    "message": "Encuesta"
+  },
+  "csvType": {
+    "message": "Tipo"
+  },
+  "csvOption": {
+    "message": "Opción"
+  },
+  "csvPercent": {
+    "message": "Porcentaje"
+  },
+  "csvAverage": {
+    "message": "Promedio"
+  },
+  "newPoll": {
+    "message": "Nueva encuesta"
+  },
+  "editPoll": {
+    "message": "Editar encuesta"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "pollQuestion": {
+    "message": "Pregunta de la encuesta"
+  },
+  "pollQuestionPlaceholder": {
+    "message": "¿Qué quieres preguntarle a tu público?"
+  },
+  "kindSingle": {
+    "message": "Una opción"
+  },
+  "kindMulti": {
+    "message": "Varias"
+  },
+  "kindRating": {
+    "message": "Estrellas"
+  },
+  "kindWords": {
+    "message": "Palabras"
+  },
+  "hint_single": {
+    "message": "Cada persona elige una opción."
+  },
+  "hint_multi": {
+    "message": "Cada persona puede marcar varias opciones."
+  },
+  "hint_rating": {
+    "message": "Calificación de 1 a 5 estrellas, con el promedio en pantalla."
+  },
+  "hint_words": {
+    "message": "Respuestas cortas que forman una nube de palabras: las más repetidas se ven más grandes."
+  },
+  "addOption": {
+    "message": "Agregar opción"
+  },
+  "removeOption": {
+    "message": "Quitar opción"
+  },
+  "optionN": {
+    "message": "Opción $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "templates": {
+    "message": "Plantillas"
+  },
+  "tplYesNo": {
+    "message": "Sí / No"
+  },
+  "tplYesNoMaybe": {
+    "message": "Sí / No / Tal vez"
+  },
+  "tplKnowledge": {
+    "message": "¿Cuánto sabes?"
+  },
+  "tplRating": {
+    "message": "Califica la charla"
+  },
+  "tplOneWord": {
+    "message": "En una palabra"
+  },
+  "tplWhere": {
+    "message": "¿Desde dónde?"
+  },
+  "savePoll": {
+    "message": "Guardar"
+  },
+  "saveAndOpen": {
+    "message": "Guardar y abrir votación"
+  },
+  "errNoQuestion": {
+    "message": "Escribe la pregunta de la encuesta."
+  },
+  "errTwoOptions": {
+    "message": "Agrega al menos dos opciones."
+  },
+  "pollSaved": {
+    "message": "Encuesta guardada"
+  },
+  "pollUpdated": {
+    "message": "Encuesta actualizada"
+  },
+  "pollOpened": {
+    "message": "Votación abierta en los celulares"
+  },
+  "pollClosedToast": {
+    "message": "Votación cerrada"
+  },
+  "pollLocked": {
+    "message": "Ya tiene votos: reinicia los votos para cambiar las opciones"
+  },
+  "pollStateOpen": {
+    "message": "En vivo"
+  },
+  "pollStateClosed": {
+    "message": "Cerrada"
+  },
+  "pollStateDraft": {
+    "message": "Borrador"
+  },
+  "pollOpen": {
+    "message": "Abrir votación"
+  },
+  "pollReopen": {
+    "message": "Reabrir"
+  },
+  "pollReset": {
+    "message": "Reiniciar votos"
+  },
+  "duplicate": {
+    "message": "Duplicar"
+  },
+  "noAnswersYet": {
+    "message": "Aún no hay respuestas"
+  },
+  "pollsEmptyTitle": {
+    "message": "Prepara tus encuestas"
+  },
+  "pollsEmptyBody": {
+    "message": "Créalas antes de la charla y ábrelas con un clic cuando llegue el momento."
+  },
+  "liveShort": {
+    "message": "En vivo"
+  },
+  "emojiTitle": {
+    "message": "Emojis del público"
+  },
+  "emojiBody": {
+    "message": "Elige hasta seis. Aparecen en este orden en los celulares."
+  },
+  "emojiMin": {
+    "message": "Deja al menos un emoji"
+  },
+  "emojiMax": {
+    "message": "Máximo seis: quita uno primero"
+  },
+  "totalsTitle": {
+    "message": "Reacciones recibidas"
+  },
+  "testReactions": {
+    "message": "Probar en pantalla"
+  },
+  "totalReactions": {
+    "message": "Total de reacciones"
+  },
+  "peopleOne": {
+    "message": "1 persona conectada"
+  },
+  "peopleMany": {
+    "message": "$N$ personas conectadas",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "peopleEmpty": {
+    "message": "Cuando alguien escanee el QR aparecerá aquí."
+  },
+  "connectedAgo": {
+    "message": "entró $WHEN$",
+    "placeholders": {
+      "when": {
+        "content": "$1"
+      }
+    }
+  },
+  "askedOne": {
+    "message": "1 pregunta"
+  },
+  "askedMany": {
+    "message": "$N$ preguntas",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "devicesN": {
+    "message": "$N$ dispositivos",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "kick": {
+    "message": "Desconectar"
+  },
+  "kicked": {
+    "message": "Persona desconectada"
+  },
+  "roomTitle": {
+    "message": "Sala"
+  },
+  "newCode": {
+    "message": "Código nuevo"
+  },
+  "newCodeSub": {
+    "message": "Desconecta a todos y crea un QR nuevo. Las preguntas y encuestas se conservan."
+  },
+  "newCodeBtn": {
+    "message": "Crear código nuevo"
+  },
+  "newCodeDone": {
+    "message": "Código nuevo listo"
+  },
+  "clearRoom": {
+    "message": "Empezar de cero"
+  },
+  "clearRoomSub": {
+    "message": "Borra las preguntas, los votos y las reacciones. Tus encuestas quedan como borrador."
+  },
+  "clearRoomBtn": {
+    "message": "Vaciar la sala"
+  },
+  "roomCleared": {
+    "message": "Sala vacía"
+  },
+  "onScreen": {
+    "message": "En pantalla"
+  },
+  "yourSlide": {
+    "message": "Tu diapositiva"
+  },
+  "whereOn": {
+    "message": "Se ve en:"
+  },
+  "whereNone": {
+    "message": "Aún no se ve en ninguna pestaña. En tu presentación, abre Preguntazo y activa «Mostrar en esta pestaña», o abre la pantalla completa."
+  },
+  "swBadge": {
+    "message": "QR en la esquina"
+  },
+  "swBadgeSub": {
+    "message": "Un QR pequeño queda siempre visible para que se sume quien llegue tarde."
+  },
+  "corner": {
+    "message": "Esquina"
+  },
+  "cornerSub": {
+    "message": "Dónde va el QR pequeño sobre la diapositiva."
+  },
+  "cornerTl": {
+    "message": "Arriba a la izquierda"
+  },
+  "cornerTr": {
+    "message": "Arriba a la derecha"
+  },
+  "cornerBl": {
+    "message": "Abajo a la izquierda"
+  },
+  "cornerBr": {
+    "message": "Abajo a la derecha"
+  },
+  "size": {
+    "message": "Tamaño"
+  },
+  "sizeSub": {
+    "message": "Más grande se lee desde más lejos."
+  },
+  "sizeS": {
+    "message": "Pequeño"
+  },
+  "sizeM": {
+    "message": "Mediano"
+  },
+  "sizeL": {
+    "message": "Grande"
+  },
+  "screenQr": {
+    "message": "QR"
+  },
+  "fullscreen": {
+    "message": "Pantalla completa"
+  },
+  "fullscreenTitle": {
+    "message": "Pantalla completa (F)"
+  },
+  "screenHint": {
+    "message": "Arrastra esta ventana al proyector y pulsa F. H oculta los controles."
+  },
+  "stageJoin": {
+    "message": "¡Participa!"
+  },
+  "stageScan": {
+    "message": "Escanea el código con la cámara de tu celular"
+  },
+  "stageOrGo": {
+    "message": "o entra a"
+  },
+  "stageWithCode": {
+    "message": "y escribe el código"
+  },
+  "stagePerson": {
+    "message": "persona conectada"
+  },
+  "stagePeople": {
+    "message": "personas conectadas"
+  },
+  "stageWaiting": {
+    "message": "Esperando al público…"
+  },
+  "stageBadge": {
+    "message": "Pregunta y vota"
+  },
+  "stageQuestion": {
+    "message": "Pregunta del público"
+  },
+  "stageAnswered": {
+    "message": "Respondida"
+  },
+  "stageVote": {
+    "message": "voto"
+  },
+  "stageVotes": {
+    "message": "votos"
+  },
+  "stageAnon": {
+    "message": "Anónimo"
+  },
+  "stagePollLive": {
+    "message": "Encuesta en vivo"
+  },
+  "stagePollClosed": {
+    "message": "Resultados"
+  },
+  "stageNoAnswers": {
+    "message": "Esperando respuestas…"
+  },
+  "stageNewQuestion": {
+    "message": "Nueva pregunta"
+  },
+  "heroTitle": {
+    "message": "Bienvenido a Preguntazo"
+  },
+  "heroBody": {
+    "message": "Tu público escanea un QR y, desde su celular, te envía preguntas, vota en encuestas y lanza emojis que flotan sobre tus diapositivas. Sin apps ni cuentas."
+  },
+  "step1Title": {
+    "message": "Abre tu presentación"
+  },
+  "step1Body": {
+    "message": "En Chrome, haz clic en el ícono de Preguntazo (o Alt+Shift+P) y activa «Mostrar en esta pestaña»."
+  },
+  "step2Title": {
+    "message": "Tu público escanea"
+  },
+  "step2Body": {
+    "message": "Un QR queda en una esquina de tus diapositivas. Con Alt+Shift+Q lo muestras en grande."
+  },
+  "step3Title": {
+    "message": "Pregunta, vota y reacciona"
+  },
+  "step3Body": {
+    "message": "Modera desde el panel, muestra la pregunta más votada con Alt+Shift+N y abre encuestas en vivo."
+  },
+  "shortcutHint": {
+    "message": "Atajo: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> abre Preguntazo con el QR"
+  },
+  "roomCardTitle": {
+    "message": "Tu sala"
+  },
+  "roomCardBody": {
+    "message": "El código no cambia entre charlas: descarga el QR y pégalo en tu primera diapositiva."
+  },
+  "roomCodeHint": {
+    "message": "o escribe el código en esa dirección"
+  },
+  "newCodeEach": {
+    "message": "Código nuevo cada vez"
+  },
+  "newCodeEachSub": {
+    "message": "Crea un QR distinto cada vez que abres la sala (no sirve el QR pegado en tus diapositivas)."
+  },
+  "slidesTitle": {
+    "message": "Sobre tus diapositivas"
+  },
+  "slidesBody": {
+    "message": "Preguntazo dibuja una capa transparente sobre la presentación: no toca tus archivos ni recibe clics."
+  },
+  "newQuestionToast": {
+    "message": "Avisar de preguntas nuevas"
+  },
+  "newQuestionToastSub": {
+    "message": "Un aviso discreto arriba de la diapositiva cuando llega una pregunta."
+  },
+  "autoFullscreen": {
+    "message": "Aparecer sola al presentar"
+  },
+  "autoFullscreenSub": {
+    "message": "En los sitios que permitas, la capa aparece al poner la presentación en pantalla completa."
+  },
+  "sitesTitle": {
+    "message": "Sitios donde aparece sola"
+  },
+  "sitesBody": {
+    "message": "Se agregan con «Mostrar sola al presentar en…» en el panel de Preguntazo."
+  },
+  "allSites": {
+    "message": "Todos los sitios"
+  },
+  "allSitesSub": {
+    "message": "Aparece al presentar en pantalla completa en cualquier sitio."
+  },
+  "sitesEmpty": {
+    "message": "Todavía ninguno. Mientras tanto, usa «Mostrar en esta pestaña»."
+  },
+  "remove": {
+    "message": "Quitar"
+  },
+  "audienceTitle": {
+    "message": "Público"
+  },
+  "shortcutsTitle": {
+    "message": "Atajos de teclado"
+  },
+  "editShortcuts": {
+    "message": "Cambiar atajos"
+  },
+  "noShortcut": {
+    "message": "Sin asignar"
+  },
+  "guideTitle": {
+    "message": "Guía rápida"
+  },
+  "guideSlidesTitle": {
+    "message": "Con presentaciones en el navegador"
+  },
+  "guideSlidesBody": {
+    "message": "Abre tu presentación en Chrome, haz clic en Preguntazo y activa <b>Mostrar en esta pestaña</b>. Al presentar en pantalla completa, el QR, las reacciones y la pregunta destacada quedan encima. Para que aparezca sola cada vez, pulsa <b>Mostrar sola al presentar en…</b>"
+  },
+  "guideDesktopTitle": {
+    "message": "Con PowerPoint, Keynote u otro programa"
+  },
+  "guideDesktopBody": {
+    "message": "Abre la <b>pantalla completa</b> de Preguntazo en el proyector (o en una segunda pantalla) y alterna con tu programa. También puedes pegar el QR descargado en tus diapositivas: el código no cambia entre charlas. En OBS, captura la ventana de la pantalla completa."
+  },
+  "guideTipsTitle": {
+    "message": "Consejos para una buena sesión"
+  },
+  "guideTipsBody": {
+    "message": "Muestra el QR en grande al empezar (Alt+Shift+Q) y deja el pequeño en una esquina. Pide una reacción para romper el hielo. Prepara las encuestas antes y ábrelas con un clic. Con <b>Siguiente pregunta</b> (Alt+Shift+N) respondes en orden de votos. Si el Wi-Fi del lugar falla, el público puede usar sus datos móviles."
+  },
+  "advancedTitle": {
+    "message": "Avanzado"
+  },
+  "autoStart": {
+    "message": "Abrir la sala al iniciar Chrome"
+  },
+  "autoStartSub": {
+    "message": "La sala queda lista sin abrir el panel."
+  },
+  "remoteUrl": {
+    "message": "Dirección de la página del público"
+  },
+  "remoteUrlSub": {
+    "message": "Cámbiala solo si publicaste la página en otro sitio."
+  },
+  "reset": {
+    "message": "Restablecer"
+  },
+  "invalidUrl": {
+    "message": "La dirección debe empezar con https://"
+  },
+  "saved": {
+    "message": "Guardado"
+  },
+  "madeBy": {
+    "message": "Creado por Miguel Mogrovejo"
+  },
+  "privacy": {
+    "message": "Privacidad"
+  },
+  "licenses": {
+    "message": "Licencias"
+  }
+}

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preguntazo · Ajustes</title>
+  <link rel="icon" href="icons/icon-32.png">
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="options.css">
+  <script src="options.js" type="module"></script>
+</head>
+<body>
+  <main class="page" id="bienvenida">
+    <!-- Bienvenida -->
+    <section class="hero">
+      <img src="icons/icon-128.png" width="88" height="88" alt="">
+      <div class="hero-text">
+        <h1 data-i18n="heroTitle"></h1>
+        <p class="muted" data-i18n="heroBody"></p>
+      </div>
+    </section>
+
+    <ol class="steps">
+      <li><span class="num">1</span><div><b data-i18n="step1Title"></b><span class="muted" data-i18n="step1Body"></span></div></li>
+      <li><span class="num">2</span><div><b data-i18n="step2Title"></b><span class="muted" data-i18n="step2Body"></span></div></li>
+      <li><span class="num">3</span><div><b data-i18n="step3Title"></b><span class="muted" data-i18n="step3Body"></span></div></li>
+    </ol>
+
+    <div class="hero-actions">
+      <button class="btn primary" id="open-panel" type="button" data-i18n="openPanel"></button>
+      <span class="muted small" data-i18n-html="shortcutHint"></span>
+    </div>
+
+    <!-- Tu sala -->
+    <section class="card" id="sala">
+      <h2 data-i18n="roomCardTitle"></h2>
+      <p class="muted" data-i18n="roomCardBody"></p>
+      <div class="room">
+        <div class="room-qr" id="room-qr"></div>
+        <div class="room-text">
+          <span class="room-code" id="room-code"></span>
+          <span class="muted small" id="room-link"></span>
+          <div class="room-actions">
+            <button class="btn small accent" id="download-qr" type="button" data-i18n="downloadQrLong"></button>
+            <button class="btn small" id="copy" type="button" data-i18n="copyLink"></button>
+            <button class="btn small ghost" id="new-code" type="button" data-i18n="newCodeBtn"></button>
+          </div>
+        </div>
+      </div>
+      <div class="row column title-row">
+        <span>
+          <span class="row-title" data-i18n="talkTitle"></span>
+          <span class="row-sub muted" data-i18n="talkTitleSub"></span>
+        </span>
+        <input class="input" id="title" maxlength="80">
+      </div>
+      <label class="row">
+        <span>
+          <span class="row-title" data-i18n="newCodeEach"></span>
+          <span class="row-sub muted" data-i18n="newCodeEachSub"></span>
+        </span>
+        <input type="checkbox" class="switch" data-setting="newCodeEachSession">
+      </label>
+    </section>
+
+    <!-- Sobre las diapositivas -->
+    <section class="card" id="diapositivas">
+      <h2 data-i18n="slidesTitle"></h2>
+      <p class="muted" data-i18n="slidesBody"></p>
+      <label class="row">
+        <span>
+          <span class="row-title" data-i18n="swBadge"></span>
+          <span class="row-sub muted" data-i18n="swBadgeSub"></span>
+        </span>
+        <input type="checkbox" class="switch" data-setting="qrBadge">
+      </label>
+      <div class="row">
+        <span>
+          <span class="row-title" data-i18n="corner"></span>
+          <span class="row-sub muted" data-i18n="cornerSub"></span>
+        </span>
+        <div class="seg" id="qr-corner" role="radiogroup">
+          <button type="button" role="radio" data-v="tl" data-i18n="cornerTl"></button>
+          <button type="button" role="radio" data-v="tr" data-i18n="cornerTr"></button>
+          <button type="button" role="radio" data-v="bl" data-i18n="cornerBl"></button>
+          <button type="button" role="radio" data-v="br" data-i18n="cornerBr"></button>
+        </div>
+      </div>
+      <div class="row">
+        <span>
+          <span class="row-title" data-i18n="size"></span>
+          <span class="row-sub muted" data-i18n="sizeSub"></span>
+        </span>
+        <div class="seg" id="qr-size" role="radiogroup">
+          <button type="button" role="radio" data-v="s" data-i18n="sizeS"></button>
+          <button type="button" role="radio" data-v="m" data-i18n="sizeM"></button>
+          <button type="button" role="radio" data-v="l" data-i18n="sizeL"></button>
+        </div>
+      </div>
+      <label class="row">
+        <span>
+          <span class="row-title" data-i18n="newQuestionToast"></span>
+          <span class="row-sub muted" data-i18n="newQuestionToastSub"></span>
+        </span>
+        <input type="checkbox" class="switch" data-setting="newQuestionToast">
+      </label>
+      <label class="row">
+        <span>
+          <span class="row-title" data-i18n="autoFullscreen"></span>
+          <span class="row-sub muted" data-i18n="autoFullscreenSub"></span>
+        </span>
+        <input type="checkbox" class="switch" data-setting="autoFullscreen">
+      </label>
+      <div class="row column" id="sitios">
+        <span>
+          <span class="row-title" data-i18n="sitesTitle"></span>
+          <span class="row-sub muted" data-i18n="sitesBody"></span>
+        </span>
+        <label class="row">
+          <span>
+            <span class="row-title" data-i18n="allSites"></span>
+            <span class="row-sub muted" data-i18n="allSitesSub"></span>
+          </span>
+          <input type="checkbox" class="switch" id="all-sites">
+        </label>
+        <ul class="sites" id="sites"></ul>
+        <p class="muted small" id="sites-empty" data-i18n="sitesEmpty"></p>
+      </div>
+    </section>
+
+    <!-- Público -->
+    <section class="card" id="publico">
+      <h2 data-i18n="audienceTitle"></h2>
+      <label class="row">
+        <span><span class="row-title" data-i18n="swQuestionsOpen"></span><span class="row-sub muted" data-i18n="swQuestionsOpenSub"></span></span>
+        <input type="checkbox" class="switch" data-setting="questionsOpen">
+      </label>
+      <label class="row">
+        <span><span class="row-title" data-i18n="swModeration"></span><span class="row-sub muted" data-i18n="swModerationSub"></span></span>
+        <input type="checkbox" class="switch" data-setting="moderation">
+      </label>
+      <label class="row">
+        <span><span class="row-title" data-i18n="swAnonymous"></span><span class="row-sub muted" data-i18n="swAnonymousSub"></span></span>
+        <input type="checkbox" class="switch" data-setting="anonymous">
+      </label>
+      <label class="row">
+        <span><span class="row-title" data-i18n="swPublic"></span><span class="row-sub muted" data-i18n="swPublicSub"></span></span>
+        <input type="checkbox" class="switch" data-setting="publicQuestions">
+      </label>
+      <label class="row">
+        <span><span class="row-title" data-i18n="swResults"></span><span class="row-sub muted" data-i18n="swResultsSub"></span></span>
+        <input type="checkbox" class="switch" data-setting="resultsLive">
+      </label>
+      <label class="row">
+        <span><span class="row-title" data-i18n="swReactions"></span><span class="row-sub muted" data-i18n="swReactionsSub"></span></span>
+        <input type="checkbox" class="switch" data-setting="reactionsOn">
+      </label>
+    </section>
+
+    <!-- Atajos -->
+    <section class="card" id="atajos">
+      <h2 data-i18n="shortcutsTitle"></h2>
+      <ul class="shortcuts" id="shortcuts"></ul>
+      <button class="btn small ghost shortcut-link" id="edit-shortcuts" type="button" data-i18n="editShortcuts"></button>
+    </section>
+
+    <!-- Guía -->
+    <section class="card guide">
+      <h2 data-i18n="guideTitle"></h2>
+      <details>
+        <summary data-i18n="guideSlidesTitle"></summary>
+        <p class="muted" data-i18n-html="guideSlidesBody"></p>
+      </details>
+      <details>
+        <summary data-i18n="guideDesktopTitle"></summary>
+        <p class="muted" data-i18n-html="guideDesktopBody"></p>
+      </details>
+      <details>
+        <summary data-i18n="guideTipsTitle"></summary>
+        <p class="muted" data-i18n-html="guideTipsBody"></p>
+      </details>
+    </section>
+
+    <!-- Avanzado -->
+    <section class="card">
+      <h2 data-i18n="advancedTitle"></h2>
+      <label class="row">
+        <span>
+          <span class="row-title" data-i18n="autoStart"></span>
+          <span class="row-sub muted" data-i18n="autoStartSub"></span>
+        </span>
+        <input type="checkbox" class="switch" data-setting="autoStart">
+      </label>
+      <div class="row column">
+        <span>
+          <span class="row-title" data-i18n="remoteUrl"></span>
+          <span class="row-sub muted" data-i18n="remoteUrlSub"></span>
+        </span>
+        <div class="url-row">
+          <input class="input" id="remote-url" type="url" spellcheck="false">
+          <button class="btn" id="remote-url-reset" type="button" data-i18n="reset"></button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="about">
+      <img src="icons/icon-32.png" width="20" height="20" alt="">
+      <span>Preguntazo <span id="version"></span> · <span data-i18n="madeBy"></span></span>
+      <a href="https://mjmc4498.github.io/preguntazo/privacy.html" target="_blank" rel="noopener" data-i18n="privacy"></a>
+      <a href="THIRD_PARTY_NOTICES.txt" target="_blank" data-i18n="licenses"></a>
+    </footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
